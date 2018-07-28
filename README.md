@@ -1,10 +1,14 @@
-# React Express Starter Pack
+## React Express Starter Pack
 
 > Create full stack apps with React and Express. Run your client and server with a single command. 
 
-### Redux Version
-This version does not include Redux
-[Click Here For Redux Version](https://github.com/bradtraversy/react_redux_express_starter) 
+## Mailgun
+
+> You can now send email from Your site.
+
+#####Info:
+> Create account on Mailgun and add domain (or use already created sandbox domain) and add info in server.js.
+
 
 ## Quick Start
 

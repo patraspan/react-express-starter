@@ -29,7 +29,7 @@ async handleSubmit(e) {
 
   render() {
     return (
-  <Form onSubmit={this.handleSubmit} className="container">
+      <Form onSubmit={this.handleSubmit} className="container">
         <FormGroup>
           <Label for="name">Password</Label>
           <Input type="text" name="name" id="name" placeholder="Your name" onChange={this.handleChange}/>

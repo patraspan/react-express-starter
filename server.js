@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-const mg = require('nodemailer-mailgun-transport');
+const mg = require('nodemailer-mailgun-transport'); // don't forget to 'npm i nodemailer-mailgun-transport'
 const app = express();
 
 const PORT = process.env.PORT || 5000;
@@ -23,30 +23,16 @@ app.post('/api/form', (req, res) => {
     `
     let auth = {
       auth: {
-        api_key: '35bc16fbb07add97a10d422e6dc18c3d-3b1f59cf-a73c20f0',
-        domain: 'sandbox50d788b4c7554c99a7b3be40581aab58.mailgun.org',
+        api_key: '987YourApiKeyHere654-123456789',
+        domain: 'domainCreatedByMailgun.mailgun.org',
       },
-      proxy: false,
+      proxy: false, // 'http://user:pass@localhost:8080' it is optional
     }
     let nodemailerMailgun = nodemailer.createTransport(mg(auth));
 
-  //   let transporter = nodemailer.createTransport({
-  //     service: 'SMTP',
-  //     host: 'smtp.mailgun.org',
-  //     port: 465,
-  //     secure: true, // true for 465, false for other ports
-  //     auth: {
-  //         user: '', // generated ethereal user
-  //         pass: '' // generated ethereal password
-  //     },
-  //   //   tls: {
-  //   //     rejectUnauthorized: false
-  //   // }
-  // });
-
   let mailOptions = {
-    from: 'Contact - React App <noreply@designpk.com>', // sender address
-    to: 'patrick.kurzeja@gmail.com', // list of receivers - my email in that case
+    from: 'Contact - React App <noreply@eample.com>', // sender address - You can write here whatever, it is name of email sender 
+    to: 'example@email.com', // list of receivers (in array if many)
     subject: 'Message from site', // Subject line
     text: req.body.message, // plain text body
     html: htmlEmail // html body
@@ -64,7 +50,6 @@ nodemailerMailgun.sendMail(mailOptions, (error, info) => {
 });
 
 
-
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`)
-})
+});

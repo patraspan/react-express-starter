@@ -6,7 +6,7 @@
 
 > You can now send email from Your site.
 
-#####Info:
+##### Info:
 > Create account on Mailgun and add domain (or use already created sandbox domain) and add info in server.js.
 
 
